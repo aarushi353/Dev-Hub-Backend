@@ -1,9 +1,16 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import Navbar from "./components/layout/navbar";
+import Landing from "./components/layout/landing";
 
-const App = () =>
-    <React.Fragment>
-      <h1>App</h1>
-    </React.Fragment>
+const App = () => (
+  <BrowserRouter>
+    <Navbar />
+    <Routes>
+    <Route exact path='/' element={<Landing />} />
+    </Routes>
+  </BrowserRouter>
+);
 
-export default App;
+export default App
